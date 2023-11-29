@@ -41,7 +41,7 @@ const Map = () => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg" // random key from open sources
+        googleMapsApiKey: "AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao" // random key from open sources
     });
 
     const addMarker = (location) => {
