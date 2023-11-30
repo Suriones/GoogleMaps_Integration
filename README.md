@@ -5,7 +5,6 @@
 <p align="center">My project is a integration of Google maps interacting with FireBase Database.</p>
 
 <h1><a href="https://github.com/Suriones/GoogleMaps_Integration/blob/main/package.json">Technology</a></h1>
-<p>I didn't use create-react-app and built the project from scratch.</p>
 <ul>
   <li>React, Webpack, Babel, Sass</li>
   <li>Axios, Google-Maps-API, FireBase DataBase</li>
