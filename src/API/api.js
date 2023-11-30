@@ -12,7 +12,7 @@ export const MarkersDataBase = {
 
         let URL = "MarkersHistory/";
 
-        for (let i = 0; i < label - 2; i++) {
+        for (let i = 0; i < label - 1; i++) {
             URL = URL + "marker/next/";
         }
 

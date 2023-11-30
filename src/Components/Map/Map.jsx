@@ -24,11 +24,10 @@ const getMarkers = async () => {
     };
 }
 
-
 const Map = () => {
 
-    const center = { lat: 49.83945, lng: 24.02904 };
     const mapContainerStyle = { width: '1200px', height: '700px' };
+    const [center, setCenter] = React.useState({ lat: 49.83945, lng: 24.02904 });
     const [userMarker, setUserMarker] = React.useState([<Marker position={center} key={"1"} label={"1"} />]);
     const [label, setLabel] = React.useState();
 
@@ -47,6 +46,8 @@ const Map = () => {
     const addMarker = (location) => {
 
         setUserMarker(userMarker.concat([<Marker position={{ lat: location.latLng.lat(), lng: location.latLng.lng() }} label={label} key={label} />]));
+        setLabel((parseInt(label) + 1).toString());
+        setCenter({ lat: location.latLng.lat(), lng: location.latLng.lng() });
 
         const marker = {
             "marker": {
@@ -55,14 +56,10 @@ const Map = () => {
             }
         }
 
-        MarkersDataBase.putMarker(marker, parseInt(label));
-
-        setLabel((parseInt(label) + 1).toString());
+        MarkersDataBase.putMarker(marker, parseInt(label - 1));
     }
 
-    const map = <div><GoogleMap mapContainerStyle={mapContainerStyle} center={center} onClick={addMarker} zoom={12} > {userMarker} </GoogleMap></div>;
-
-    return isLoaded ? map : null;
+    return isLoaded ? <div><GoogleMap mapContainerStyle={mapContainerStyle} center={center} onClick={addMarker} zoom={12} > {userMarker} </GoogleMap></div> : null;
 }
 
 export default Map;
