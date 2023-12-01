@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: "https://maps-integration-d7049-default-rtdb.firebaseio.com/"
+    baseURL: "" // you need a basic database url like this: https://maps-integration-*...*-default-rtdb.firebaseio.com/
 })
 
 export const MarkersDataBase = {
     getAll() {
-        return instance.get("MarkersHistory.json");
+        return instance.get(""); // addition to url like this: "Markers.json"
     },
     putMarker(marker, label) {
 
-        let URL = "MarkersHistory/";
+        let URL = ""; // addition to url like this: "Markers.json"
 
         for (let i = 0; i < label - 1; i++) {
             URL = URL + "marker/next/";
