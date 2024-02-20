@@ -11,10 +11,11 @@
 </ul>
 
 <h1>Launch</h1>
+<p>Use link: https://suriones.github.io/GoogleMaps_Integration/</p>
+<p>Dev Launch:</p>
 <ul>
 <li><p>Write to console: npm install</p></li>
-<li><p>Connect Google API key and database Firebase. There are comments in the code to help.</p></li>
-<li><p>Last step: npm run dev</p></li>
+<li><p>Write to console: npm run dev</p></li>
 <p><img src="https://github.com/Suriones/GoogleMaps_Integration/assets/111291999/901691d9-4462-493f-9879-500587254063"></p>
 </ul>
 
