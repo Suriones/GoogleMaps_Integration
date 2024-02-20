@@ -40,7 +40,7 @@ const Map = () => {
 
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: "" // need google key
+        googleMapsApiKey: "AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"
     });
 
     const addMarker = (location) => {
@@ -56,7 +56,13 @@ const Map = () => {
             }
         }
 
-        MarkersDataBase.putMarker(marker, parseInt(label - 1));
+        MarkersDataBase.putMarker(marker, parseInt(label - 1)).then(result => {
+            console.log(result.data);
+            if (result.data === null) {
+                alert("Sorry. The database depth limit is 32, and storing markers in depth is a requirement of the task. I am forced to update your page and reset the database.");
+                window.location.reload();
+            }
+        });
     }
 
     return isLoaded ? <div><GoogleMap mapContainerStyle={mapContainerStyle} center={center} onClick={addMarker} zoom={12} > {userMarker} </GoogleMap></div> : null;
