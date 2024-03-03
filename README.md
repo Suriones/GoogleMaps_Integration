@@ -4,6 +4,8 @@
 
 <p align="center">My project is a integration of Google maps interacting with FireBase Database.</p>
 
+<h4 align="center">At the moment I have disabled reading and writing to the database, in which case my contacts are available for communication.</h4>
+
 <h1><a href="https://github.com/Suriones/GoogleMaps_Integration/blob/main/package.json">Technology</a></h1>
 <ul>
   <li>React, Webpack, Babel, Sass</li>
